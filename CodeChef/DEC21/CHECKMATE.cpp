@@ -13,7 +13,7 @@ int main()
     cin >> t;
     while (t > 0)
     {
-        int k[2], r1[2], r2[2], flag;
+        int k[2], r1[2], r2[2], flag = 0;
         for (int i = 0; i < 2; i++)
         {
             cin >> k[i];
@@ -26,8 +26,7 @@ int main()
         {
             cin >> r2[i];
         }
-
-        if (k[0] == 1)
+        if (k[0] == 1 && r1[1] != r2[1])
         {
             set<int> kingspace = {k[1], k[1] - 1, k[1] + 1};
             if (r1[0] == 2 && kingspace.count(r1[1]) == 0)
@@ -45,7 +44,7 @@ int main()
                     flag = 0;
             }
         }
-        if (k[0] == 8)
+        if (k[0] == 8 && r1[1] != r2[1])
         {
             set<int> kingspace = {k[1], k[1] - 1, k[1] + 1};
             if (r1[0] == 7 && kingspace.count(r1[1]) == 0)
@@ -63,7 +62,7 @@ int main()
                     flag = 0;
             }
         }
-        if (k[1] == 1)
+        if (k[1] == 1 && r1[0] != r2[0])
         {
             set<int> kingspace = {k[0], k[0] - 1, k[0] + 1};
             if (r1[1] == 2 && kingspace.count(r1[0]) == 0)
@@ -81,7 +80,7 @@ int main()
                     flag = 0;
             }
         }
-        if (k[1] == 8)
+        if (k[1] == 8 && r1[0] != r2[0])
         {
             set<int> kingspace = {k[0], k[0] - 1, k[0] + 1};
             if (r1[1] == 7 && kingspace.count(r1[0]) == 0)
@@ -110,7 +109,6 @@ int main()
             cout << "YES"
                  << "\n";
         }
-
         t--;
     }
     return 0;
