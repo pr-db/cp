@@ -59,6 +59,6 @@ def solution(l):
             return ans
 
 
-l = [5, 5, 5, 7]
+l = [4,3,2,1]
 ans = solution(l)
 print(ans)
