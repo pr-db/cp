@@ -1,9 +1,4 @@
-#include <iostream>
-#include <cstdlib>
-#include <string>
-#include <set>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -20,6 +15,7 @@ int main()
 
         for (int i = 0; i < n; i++)
         {
+            cout << i << endl;
         }
 
         t--;

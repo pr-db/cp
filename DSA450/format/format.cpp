@@ -1,17 +1,13 @@
-#include <iostream>
-#include <cstdlib>
-#include <string>
-#include <set>
-#include <vector>
-#include <algorithm>
-#include <numeric>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int func(int a[], int n)
 {
 	int ans;
-
+	for (int i = 0; i < n; i++)
+	{
+	}
 	return ans;
 }
 int main()
