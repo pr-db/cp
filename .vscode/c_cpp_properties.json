@@ -9,7 +9,8 @@
 			"defines": [
 				"_DEBUG",
 				"UNICODE",
-				"_UNICODE"
+				"_UNICODE",
+				"PRAKHAR"
 			],
 			"windowsSdkVersion": "10.0.18362.0",
 			"compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
