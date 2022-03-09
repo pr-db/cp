@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-
+typedef long long ll;
 using namespace std;
 
 int func(int a[], int n)
