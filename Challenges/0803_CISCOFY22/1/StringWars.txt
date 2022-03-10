@@ -1,0 +1,46 @@
+1. String Wars 
+Alice and her friends appeared in CISCO hackathon and they are very excited. In hackathon they have given a programming question on String in which Alice and her team needs to form a String of length n by using two characters 'A ' and 'B' in which "two consecutive B's are not allowed". 
+Alice can generate any String by using permutation and satisfying the above condition. so, Alice and her team can make any number of Strings but there is one more condition in which they need to sort all the possible strings in lexicographical order and they provide a String as output which comes at particular index mentioned in question. 
+Alice team are in trouble now and asking your help to solve it
+
+Input Format: 
+First line contains T, number of test cases. Each pair of subsequent lines contains an integer N and M where N representing the length of String and M is the index of lexicographical sorted set of Strings. 
+
+Constraints: 
+1<=T<=10
+1<=N<=90
+1<=M<10^19
+
+
+Output Format:
+Return the String at index M in lexicographical sorted set of Strings. If index M is greater than length of set of Strings then return "Not Possible".
+
+
+Sample Input: 
+2
+2
+3
+2
+4
+
+Sample Output:
+BA
+Not Possible 
+
+Explanation:
+Number of test cases in input is 2. 
+In first test case N=2 and M=3.
+so, the number strings in lexicographical sorted order: 
+AA 
+AB 
+BA
+At index M = 3, string is BA. 
+
+In second test case N = 2 and M = 4 
+so, the number of possible Strings in lexicographical sorted order: 
+AA
+AB
+BA
+So, you cannot for more Strings by satisfying the conditions mentioned 
+in the question. Hence output will be "Not Possible" 
+

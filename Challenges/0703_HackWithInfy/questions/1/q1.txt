@@ -1,0 +1,38 @@
+You are given array A with n integers and a set B with m integers. 
+You are allowed to change any integer Ai (1<= i <=n) in A to any positive integer X if Ai doesn't appear in the set B. 
+Find the minimum number of changes needed to make the array A strictly increasing. 
+
+Input Format 
+The first line contains an integer, n, denoting the number of elements in A.
+The next line contains an integer, m, denoting the number of elements in B. 
+Each line i of the n subsequent lines (where 0 <= i < n) Contains an integer describing A[i]. 
+Each line i of the m subsequent lines (where 0 <= i < m) contains an integer describing B[i]. 
+
+Constraints 
+1 <= n <= 10^6
+1 <= m <= 10^5
+1 <= A[i] <= 1=^5
+1 <= B[i] <= 10^5
+
+Sample Input 0
+5 0
+20 15 14 10 2
+
+Sample Output 0
+4
+
+Sample Input 1
+5 5
+1 2 3 4 5
+1 2 3 4 5
+
+Sample Output 1
+0
+
+Sample Input 2
+10 3
+1 5 2 6 10 15 1000 5 9 1001
+9 1 3
+
+Sample Output 2
+7
