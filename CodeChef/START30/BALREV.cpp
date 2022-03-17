@@ -14,9 +14,16 @@ int main()
 	{
 		ll n, k = 0;
 		cin >> n;
-		vector<ll> a(n);
-		for (int i = 0; i < n; i++)
-			cin >> a[i];
+		string a;
+		cin >> a;
+		for (ll i = 0; i < n;i++)
+		if(a[i]=='0')
+			k++;
+		for (ll i = 0; i < k;i++)
+			a[i] = '0';
+		for (ll i = k; i < n;i++)
+			a[i] = '1';
+		cout << a << "\n";
 	}
 	return 0;
 }

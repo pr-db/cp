@@ -12,11 +12,10 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		ll n, k = 0;
-		cin >> n;
-		vector<ll> a(n);
-		for (int i = 0; i < n; i++)
-			cin >> a[i];
+		ll n, x,k;
+		cin >> n>>x>>k;
+		ll ans = ((k / x) / n) * n;
+		cout << ans << "\n";
 	}
 	return 0;
 }

@@ -12,11 +12,19 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		ll n, k = 0;
+		ll n;
 		cin >> n;
-		vector<ll> a(n);
-		for (int i = 0; i < n; i++)
-			cin >> a[i];
+		string a, ans = "YES";
+		cin >> a;
+		string b = a;
+		sort(b.begin(), b.end());
+		for (ll i = 0; i < n / 2; i++)
+			if (a[n - 1 - i] < a[i])
+				swap(a[i], a[n - 1 - i]);
+		for (ll i = 0; i < n; i++)
+			if (a[i] != b[i])
+				ans = "NO";
+		cout << ans << "\n";
 	}
 	return 0;
 }
