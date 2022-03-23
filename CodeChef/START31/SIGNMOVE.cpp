@@ -14,9 +14,10 @@ int main()
 	{
 		ll n, k = 0;
 		cin >> n;
-		vector<ll> a(n);
-		for (ll i = 0; i < n; i++)
-			cin >> a[i];
+		if(n%2)
+			cout << (-1) * ((n + 1) / 2);
+		else
+			cout << n / 2;
 		cout << "\n";
 	}
 	return 0;
