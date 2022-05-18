@@ -2,21 +2,16 @@
 typedef long long ll;
 using namespace std;
 
-int func(int a[], int n)
+int func(vector<int> &a)
 {
-	int ans;
-	for (int i = 0; i < n; i++)
-	{
-	}
-	return ans;
+	return 0;
 }
 int main()
 {
-	int n, k;
-	int a[] = {2, 6, 3, 4, 7, 2, 10, 3, 2, 1};
-	n = sizeof(a) / sizeof(a[0]);
-	k = 5;
-	int ans = func(a, n);
+	int n;
+	vector<int> a = {2, 6, 3, 4, 7, 2, 10, 3, 2, 1};
+	n = a.size();
+	int ans = func(a);
 	cout << ans;
 	return 0;
 }
