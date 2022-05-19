@@ -16,16 +16,18 @@ int main()
 		cin >> n;
 		vector<ll> a(n);
 		vector<ll> b(n);
-		ll c = log2(n) + 1;
 
-		a[0] = pow(2, c);
-		b[0] = a[0] - 1;
-
+		a[0] = 2;
 		for (ll i = 1; i < n; i++)
-		{
 			a[i] = a[i - 1] + 1;
-			b[i] = b[i - 1] - 1;
-		}
+
+		if (n % 2)
+			b[0] = a[n - 1] + 2;
+		else
+			b[0] = a[n - 1] + 1;
+		for (ll i = 1; i < n; i++)
+			b[i] = b[i - 1] + 1;
+
 		for (ll i = 0; i < n; i++)
 			cout << a[i] << " ";
 		cout << "\n";
@@ -33,6 +35,7 @@ int main()
 			cout << b[i] << " ";
 		cout << "\n";
 
+		// cout << "\n";
 		// ll xra = 0, xrb = 0;
 		// for (ll i = 0; i < n; i++)
 		// {
