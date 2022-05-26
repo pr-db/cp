@@ -17,8 +17,19 @@ int main()
 		cin >> n;
 		vector<ll> a(n);
 		for (ll i = 0; i < n; i++)
+		{
 			cin >> a[i];
-		cout << "\n";
+			k += a[i];
+		}
+		ll ans = 0;
+		for (ll i = 0; i < n; i++)
+			if ((double)(k - a[i]) / (n - 1) == (double)a[i])
+				ans = 1;
+		if (ans)
+			cout << "YES";
+		else
+			cout << "NO";
+		nl;
 	}
 	return 0;
 }
