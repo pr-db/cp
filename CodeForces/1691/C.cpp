@@ -50,6 +50,8 @@ int main()
 
 		if (i2 == -1 && i1 != -1)
 			i2 = i1;
+		if (i1 == -1 && i2 != -1)
+			i1 = i2;
 		if (nos && i2 != n - 1)
 		{
 			if (nos && n - 1 - i2 <= k)
@@ -61,7 +63,10 @@ int main()
 			}
 		}
 		else if (nos && i2 == n - 1)
+		{
 			ans -= 10;
+			nos--;
+		}
 		if (nos && i1 != 0)
 		{
 			if (nos && i1 <= k)
@@ -71,7 +76,10 @@ int main()
 			}
 		}
 		else if (nos && i1 == 0)
+		{
 			ans -= 1;
+			nos--;
+		}
 		if (ans < 0)
 			ans = 0;
 		// cout << i1 << " " << i2 << " ";
