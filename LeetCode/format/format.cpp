@@ -2,9 +2,15 @@
 typedef long long ll;
 using namespace std;
 
-int func(vector<int> &a)
+vector<int> func(vector<int> &a)
 {
-	return 0;
+	int ans = 0;
+	for (int i = 0; i < a.size();i++)
+	{
+		ans += a[i];
+		a[i] = ans;
+	}
+	return a;
 }
 int main()
 {
