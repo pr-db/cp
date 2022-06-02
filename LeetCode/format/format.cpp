@@ -17,7 +17,7 @@ int main()
 	int n;
 	vector<int> a = {2, 6, 3, 4, 7, 2, 10, 3, 2, 1};
 	n = a.size();
-	int ans = func(a);
-	cout << ans;
+	// int ans = func(a);
+	// cout << ans;
 	return 0;
 }
