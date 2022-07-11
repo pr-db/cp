@@ -2,26 +2,16 @@
 typedef long long ll;
 using namespace std;
 
-int pivotIndex(vector<int> &a)
+vector<int> runningSum(vector<int> &nums)
 {
+	vector<int> s;
 	int sum = 0;
-	int n = a.size();
-	for (int i = 0; i < a.size(); i++)
+	for (int i = 0; i < nums.size(); i++)
 	{
-		sum += a[i];
-		a[i] = sum;
+		sum += nums[i];
+		s.push_back(sum);
 	}
-	for (int i = 0; i < a.size(); i++)
-	{
-		ll sl = 0, sr = 0;
-		if (i > 0)
-			sl = a[i - 1];
-		sr = a[n - 1] - a[i];
-		if(sr==sl)
-			return i;
-
-	}
-	return -1;
+	return s;
 }
 int main()
 {
