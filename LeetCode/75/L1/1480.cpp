@@ -2,15 +2,16 @@
 typedef long long ll;
 using namespace std;
 
-vector<int> func(vector<int> &a)
+vector<int> runningSum(vector<int> &nums)
 {
-	int ans = 0;
-	for (int i = 0; i < a.size();i++)
+	vector<int> s;
+	int sum = 0;
+	for (int i = 0; i < nums.size(); i++)
 	{
-		ans += a[i];
-		a[i] = ans;
+		sum += nums[i];
+		s.push_back(sum);
 	}
-	return a;
+	return s;
 }
 int main()
 {

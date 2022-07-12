@@ -2,15 +2,18 @@
 typedef long long ll;
 using namespace std;
 
-vector<int> func(vector<int> &a)
+bool isSubsequence(string s, string t)
 {
-	int ans = 0;
-	for (int i = 0; i < a.size();i++)
+	int n = t.size(), i = 0, j = 0;
+	while (j < s.size(), i < n)
 	{
-		ans += a[i];
-		a[i] = ans;
+		if (t[i] == s[j])
+			j++;
+		i++;
 	}
-	return a;
+	if (j == s.size())
+		return 1;
+	return 0;
 }
 int main()
 {
