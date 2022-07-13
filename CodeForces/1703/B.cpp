@@ -17,16 +17,14 @@ int main()
 		ll n;
 		cin >> n;
 		cin >> s;
-		int ct = 0;
-		if (s[0] == 'y' || s[0] == 'Y')
-			if (s[0] != 'e' || s[0] != 'E')
-				if (s[0] != 's' || s[0] != 'S')
-					ct = 1;
-		if (ct)
-			cout << "YES";
-		else
-			cout
-				<< "NO";
+		vector<ll> v(26);
+		ll ans = 0;
+		for (ll i = 0; i < n; i++)
+			v[s[i] - 65]++;
+		for (ll i = 0; i < 26;i++)
+			if(v[i])
+				ans += v[i] + 1;
+		cout << ans;
 		cout << "\n";
 	}
 	return 0;

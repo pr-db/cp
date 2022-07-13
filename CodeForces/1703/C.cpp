@@ -13,22 +13,33 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		ll n, k = 0;
+		ll n;
 		cin >> n;
 		vector<ll> a(n);
 		for (ll i = 0; i < n; i++)
 		{
 			cin >> a[i];
-			k += a[i];
 		}
-		ll ans = 0;
+
 		for (ll i = 0; i < n; i++)
-			if ((double)(k - a[i]) / (n - 1) == (double)a[i])
-				ans = 1;
-		if (ans)
-			cout << "YES";
-		else
-			cout << "NO";
+		{
+			ll k;
+			cin >> k;
+			string s;
+			cin >> s;
+			ll ct = 0;
+			for (ll i = 0; i < k; i++)
+				if (s[i] == 'D')
+					ct++;
+				else
+					ct--;
+			a[i] += ct;
+			if (a[i] < 0)
+				a[i] += 10;
+			a[i] %= 10;
+		}
+		for (ll i = 0; i < n; i++)
+			cout << a[i] << " ";
 		nl;
 	}
 	return 0;
