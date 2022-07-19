@@ -5,16 +5,46 @@ using namespace std;
 	ios_base::sync_with_stdio(false); \
 	cin.tie(NULL);                    \
 	cout.tie(NULL)
-#define nl cout << "\n";
 int main()
 {
 	FastIO;
-	int x, y;
-	x = 3;
-	y = 6;
-	for (int i = x - 1; i < x + 2; i++)
-		for (int j = y-1; j <y+ 2;j++)
-			if((i==x)^(j==y))
-				cout << i << "," << j << " ";
+	ll t;
+	cin >> t;
+	while (t--)
+	{
+		ll n, k = 0;
+		cin >> n;
+		vector<ll> a(n);
+		vector<vector<ll>> c(n,vector<ll>(1));
+
+		for (ll i = 0; i < n; i++)
+		{
+			cin >> a[i];
+			c[a[i] - 1].push_back(i);
+		}
+		for (ll i = 0; i < n;i++)
+		{
+			ll cur = 1;
+			for (ll j = 2; j < c[i].size(); j++)
+			{
+				ll dif = c[i][j] - c[i][j - 1];
+				if (dif % 2)
+					cur++;
+				else 
+				{
+					if (c[i][0])
+						c[i][0]+=cur-1;
+					else
+						c[i][0] += cur;
+
+					cur = 0;
+				}
+			}
+			c[i][0] += cur - 1;
+		}
+		for (ll i = 0; i < n; i++)
+			cout << c[i][0] << " ";
+		cout << "\n";
+	}
 	return 0;
 }
