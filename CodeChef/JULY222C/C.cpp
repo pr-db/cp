@@ -12,18 +12,17 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		ll x, y, r, n;
-		ll a, b;
-		cin >> x >> y >> n >> r;
-		b = (r - x * n) / (y - x);
-		if (b < 0)
+		ll a, b, n;
+		cin >> a >> b >> n;
+		if (a % b == 0)
 			cout << -1;
 		else
 		{
-			if (b > n)
-				b = n;
-			a = n - b;
-			cout << a << " " << b;
+			if (n % a)
+				n += (a - n % a);
+			while (n % b == 0)
+				n += a;
+			cout << n;
 		}
 		cout << "\n";
 	}
