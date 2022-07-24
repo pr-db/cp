@@ -12,11 +12,9 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		ll n, k = 0;
-		cin >> n;
-		vector<ll> a(n);
-		for (ll i = 0; i < n; i++)
-			cin >> a[i];
+		ll x, y;
+		cin >> x >> y;
+		cout << x * 4 + y;
 		cout << "\n";
 	}
 	return 0;

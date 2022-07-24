@@ -12,11 +12,19 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		ll n, k = 0;
-		cin >> n;
-		vector<ll> a(n);
-		for (ll i = 0; i < n; i++)
-			cin >> a[i];
+		ll x, y, r, n;
+		cin >> x >> y >> n >> r;
+		if (x * n > r)
+			cout << -1;
+		else
+		{
+			ll a = n;
+			ll b = 0;
+			while (a >= 0 && b >= 0 && a * x + b * y <= r)
+				a--, b++;
+			cout << a + 1 << " " << b - 1;
+		}
+
 		cout << "\n";
 	}
 	return 0;
