@@ -5,24 +5,18 @@ using namespace std;
 class Solution
 {
 public:
-	vector<int> dp;
-	int n;
 	int lengthOfLIS(vector<int> &a)
 	{
-		n = a.size();
-		a.push_back(INT_MIN);
-		dp = vector<int>(n + 1, -1);
-		return lis(a, 0, n);
-	}
-	int lis(vector<int> &a, int i, int j)
-	{
-		if (i == n)
-			return 0;
-		if (dp[j] >= 0)
-			return dp[j];
-		int take = 0, donttake = lis(a, i + 1, j);
-		if (a[i] > a[j])
-			take = lis(a, i + 1, i) + 1;
-		return dp[j] = max(take, donttake);
+		int n = a.size();
+		int ans = 0;
+		for (int i = 1; i < n; i++)
+		{
+			if (a[i] > a[ans])
+				a[++ans] = a[i];
+			else
+				*lower_bound(begin(a), begin(a) + ans, a[i]) = a[i];
+			cout << ans << " ";
+		}
+		return ans + 1;
 	}
 };
