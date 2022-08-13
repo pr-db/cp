@@ -1,40 +1,39 @@
 #include <bits/stdc++.h>
 typedef long long ll;
 using namespace std;
-
-struct TreeNode
-{
-	int val;
-	TreeNode *left;
-	TreeNode *right;
-	TreeNode() : val(0), left(nullptr), right(nullptr) {}
-	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-	TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-};
-
 class Solution
 {
 public:
-	vector<int> ans;
-
-	void rightside(TreeNode *node, int level)
+	string minWindow(string s, string t)
 	{
-		if (!node)
-			return;
-		if (ans.size() < level)
-			ans.push_back(node->val);
-		rightside(node->right, level + 1);
-		rightside(node->left, level + 1);
-	}
+		vector<int> let(128, 0);
+		int min_len = INT_MAX, min_start = 0, low = 0, count = 0;
 
-	vector<int> rightSideView(TreeNode *root)
-	{
+		for (int i = 0; i < t.size(); i++)
+			let[t[i]]++;
 
-		if (!root)
-			return ans;
-		ans.push_back(root->val);
-		rightside(root->right, 2);
-		rightside(root->left, 2);
-		return ans;
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (let[s[i]] > 0)
+				count++;
+			let[s[i]]--;
+
+			if (count == t.size())
+			{
+				while (low < i && let[s[low]] < 0)
+					let[s[low++]]++;
+
+				int len = i - low + 1;
+				if (min_len > len)
+					min_len = len, min_start = low;
+
+				count--;
+				let[s[low++]]++;
+			}
+		}
+
+		if (min_len == INT_MAX)
+			return "";
+		return s.substr(min_start, min_len);
 	}
 };
