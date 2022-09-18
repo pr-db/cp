@@ -30,7 +30,8 @@ int main()
 	FastIO;
 	int t;
 	cin >> t;
-	while (t--)
+	int k = 1;
+	while (k <= t)
 	{
 		int n;
 		cin >> n;
@@ -43,19 +44,20 @@ int main()
 			cin >> a[i].dur;
 			cin >> a[i].ind;
 		}
-		b = a;
 		sort(a.begin(), a.end(), bycol);
+		b = a;
+
 		sort(b.begin(), b.end(), bydur);
 		int ans = 0;
 		for (int i = 0; i < n; i++)
 		{
-			cout <<a[i].color<<" "<<a[i].dur<<", "<< b[i].color << " " << b[i].dur << "\n";
+			// cout << a[i].color << " " << a[i].dur << ", " << b[i].color << " " << b[i].dur << "\n";
 			if (a[i].color == b[i].color &&
 				a[i].dur == b[i].dur &&
 				a[i].ind == b[i].ind)
 				ans++;
 		}
-		cout << ans << "\n";
+		cout << "Case #" << k++ << ": " << ans << "\n";
 	}
 
 	return 0;
