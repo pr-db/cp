@@ -1,61 +1,82 @@
 #include <bits/stdc++.h>
-typedef long long int ll;
+
 using namespace std;
-#define FastIO                        \
-	ios_base::sync_with_stdio(false); \
-	cin.tie(NULL);                    \
-	cout.tie(NULL)
-struct col
-{
-	string color;
-	int dur;
-	int ind;
-};
 
-bool bycol(col &a, col &b)
-{
-	if (a.color == b.color)
-		return a.ind < b.ind;
-	return (lexicographical_compare(a.color.begin(), a.color.end(), b.color.begin(), b.color.end()));
-}
+typedef long long int ll;
 
-bool bydur(col &a, col &b)
-{
-	if (a.dur == b.dur)
-		return a.ind < b.ind;
-	return (a.dur < b.dur);
-}
+// 1 2 3 4 5
+// 1 1 1 1 1
+// 1 1 1 1 5
+// 1 1 3 3 5
+// 2 2 1
+// 2 1 1 1
+// 1 1 3 4 5
+
+// 1 2 3 4 5 6 7 8
+//
+// 1 2 3 4 5
+//  1 1 4 4
+
 int main()
 {
-	FastIO;
-	int t;
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	ll t;
 	cin >> t;
 	while (t--)
 	{
-		int n;
-		cin >> n;
-		vector<col> a(n);
-		vector<col> b(n);
+		ll n, x, y;
+		cin >> n >> x >> y;
 
-		for (int i = 0; i < n; i++)
+		if (x != 0 && y != 0)
 		{
-			cin >> a[i].color;
-			cin >> a[i].dur;
-			cin >> a[i].ind;
+			cout << -1 << "\n";
 		}
-		b = a;
-		sort(a.begin(), a.end(), bycol);
-		sort(b.begin(), b.end(), bydur);
-		int ans = 0;
-		for (int i = 0; i < n; i++)
+		else
 		{
-			cout <<a[i].color<<" "<<a[i].dur<<", "<< b[i].color << " " << b[i].dur << "\n";
-			if (a[i].color == b[i].color &&
-				a[i].dur == b[i].dur &&
-				a[i].ind == b[i].ind)
-				ans++;
+			ll k = 0;
+			ll c = 0;
+			if (x != 0)
+			{
+				k = x;
+				c = x;
+			}
+			else
+			{
+				k = y;
+				c = y;
+			}
+			cout << k << " ";
+			bool flag = false;
+			// while (k <= n - 1)
+			// {
+			// 	if ((n - 1) % k == 0)
+			// 	{
+			// 		ll f = 1;
+			// 		ll sum = 1;
+			// 		ll m = (n - 1) / k;
+			// 		for (ll i = 2; i <= n; i++)
+			// 		{
+			// 			if (sum == m)
+			// 			{
+			// 				f = i;
+			// 				sum = 1;
+			// 			}
+			// 			cout << f << " ";
+			// 			sum += 1;
+			// 		}
+			// 	}
+			// 	k += c;
+			// }
+			if (!flag)
+			{
+				cout << -1 << "\n";
+			}
+			else
+			{
+				cout << "\n";
+			}
 		}
-		cout << ans << "\n";
 	}
 
 	return 0;
