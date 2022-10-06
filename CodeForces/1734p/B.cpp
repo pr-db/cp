@@ -13,12 +13,20 @@ int main()
 	cin >> t;
 	while (t--)
 	{
-		ll n, k = 0;
+		int n;
 		cin >> n;
-		vector<ll> a(n);
-		for (ll i = 0; i < n; i++)
-			cin >> a[i];
+		cout << 1;
 		cout << "\n";
+		for (int i = 1; i < n;i++)
+		{
+			cout << 1<<" ";
+			for (int j = 0; j < i-1; j++)
+			{
+				cout << 0 << " ";
+			}
+			cout << 1;
+			cout << "\n";
+		}
 	}
 	return 0;
 }
