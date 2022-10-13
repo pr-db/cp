@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+typedef long long int ll;
+using namespace std;
+#define FastIO                        \
+	ios_base::sync_with_stdio(false); \
+	cin.tie(NULL);                    \
+	cout.tie(NULL)
+#define nl cout << "\n";
+int main()
+{
+	FastIO;
+	ll t;
+	cin >> t;
+	while (t--)
+	{
+		ll n, k = 0;
+		cin >> n;
+		string s, t;
+		priority_queue<int, vector<int>, greater<int>> sq;
+		priority_queue<int> tq;
+		vector<ll>
+			a(n);
+		for (ll i = 0; i < n; i++)
+			cin >> a[i];
+		cout << "\n";
+	}
+	return 0;
+}
