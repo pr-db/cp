@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
-typedef long long int ll;
 using namespace std;
+
+typedef long long int ll;
 #define FastIO                        \
 	ios_base::sync_with_stdio(false); \
 	cin.tie(NULL);                    \
